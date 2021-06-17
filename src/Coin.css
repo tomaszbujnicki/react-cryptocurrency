@@ -1,0 +1,38 @@
+.coin {
+  display: grid;
+  position: relative;
+  grid-template-columns: 5% 20% 15% 10% 10% 20% 20%;
+  padding: 24px;
+  text-align: right;
+  border-bottom: 1px solid #ddd;
+  width: 900px;
+}
+
+.coin h3 {
+  font-size: 16px;
+  width: 150px;
+  text-align: left;
+}
+
+.coin img {
+  height: 30px;
+  width: 30px;
+  margin-right: 10px;
+}
+
+.coin-symbol {
+  text-transform: uppercase;
+  text-align: center;
+}
+
+.coin-price {
+  font-weight: 700;
+}
+
+.red {
+  color: #f00606;
+}
+
+.green {
+  color: #11d811
+}

@@ -4,18 +4,30 @@
   padding: 0;
 }
 
+:root {
+  --background: #121212;
+  --surface: #1e1e1e;
+  --primary: #bb86fc;
+  --primary-variant: #3700b3;
+  --secondary: #04dac6;
+  --on-background: #ffffff;
+  --on-surface: #ffffff;
+  --on-primary: #000000;
+  --on-secondary: #000000;
+  --lighter-surface: #3e3e3e;
+}
+
 body {
-  background-color: #1a1a1c;
+  background-color: var(--background);
+  color: var(--on-background);
   font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-  color: #fff;
 }
 
 .coin-app {
   display: flex;
   flex-direction: column;
   align-items: center;
-  margin-top: 64px;
-  color: #fff;
+  color: var(--on-background);
 }
 
 .coin-search {
@@ -33,25 +45,31 @@ body {
 
 .coin-input {
   padding-left: 16px;
-  width: 300px;
+  width: 400px;
   height: 50px;
   border-radius: 4px;
-  border: none;
-  background-image: linear-gradient(
-    -225deg,
-    #ac32e4 0%,
-    #7918f2 48%,
-    #4801ff 100%
-  );
-  color: #e2e2e2;
+  border: 1px solid var(--on-background);
+  background: var(--background);
+  color: var(--on-background);
+  letter-spacing: 2px;
+  font-size: 18px;
+  transition: 1s;
+  outline: 1px solid transparent;
+}
+
+.coin-input:focus {
+  outline: 1px solid #11d811;
+  border: 1px solid #11d811;
+  transition: 1s;
 }
 
 .coin-input::placeholder {
-  color: #e2e2e2;
+  opacity: 0.6;
 }
 
 ul {
   list-style: none;
+  background: var(--surface);
 }
 
 a {
@@ -60,10 +78,18 @@ a {
 }
 
 .coin:hover {
-  background-image: linear-gradient(
-    -225deg,
-    #ac32e4 0%,
-    #7918f2 48%,
-    #4801ff 100%
-  );
+  background: var(--lighter-surface);
+}
+
+header {
+  width: 100%;
+  background: var(--surface);
+  color: var(--on-surface);
+  margin-bottom: 40px;
+  padding-top: 64px;
+}
+
+h1 {
+  text-align: center;
+  margin-bottom: 40px;
 }

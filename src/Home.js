@@ -27,18 +27,20 @@ function Home() {
 
   return (
     <div className="coin-app">
-      <h1>React Cryptocurrency API</h1>
-      <div className="coin-search">
-        <h2 className="coin-text">Search a currency</h2>
-        <form>
-          <input
-            type="text"
-            placeholder="Search"
-            className="coin-input"
-            onChange={handleChange}
-          />
-        </form>
-      </div>
+      <header>
+        <h1>React Cryptocurrency API</h1>
+        <div className="coin-search">
+          <h2 className="coin-text">Search a currency</h2>
+          <form>
+            <input
+              type="text"
+              placeholder="Search"
+              className="coin-input"
+              onChange={handleChange}
+            />
+          </form>
+        </div>
+      </header>
       <ul>
         {filteredCoins.map((coin) => {
           return (

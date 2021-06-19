@@ -2,11 +2,11 @@ import React, { useEffect, useState } from 'react';
 import './Coins.scss';
 import axios from 'axios';
 import { useParams } from 'react-router-dom';
-import coinList from '../../utilities/coinList';
+import { getCoinId, removeTags } from '../../utilities/utilities';
 
 const Coins = () => {
-  let { linkName } = useParams();
-  let id = generateId(linkName);
+  let { coinLinkName } = useParams();
+  let id = getCoinId(coinLinkName) || 'bitcoin';
 
   const [coin, setCoin] = useState([]);
   const [description, setDescription] = useState([]);
@@ -32,18 +32,3 @@ const Coins = () => {
 };
 
 export default Coins;
-
-function generateId(linkName) {
-  const index = coinList.findIndex((x) => x.name === linkName);
-  return index === -1 ? 'Nope' : coinList[index].id;
-}
-
-function removeTags(str) {
-  if (str === null || str === '') return false;
-  else str = str.toString();
-
-  // Regular expression to identify HTML tags in
-  // the input string. Replacing the identified
-  // HTML tag with a null string.
-  return str.replace(/(<([^>]+)>)/gi, '');
-}

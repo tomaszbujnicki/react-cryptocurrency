@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import coinList from '../../utilities/coinList';
+import coinList from '../../data/coinList';
 import './Header.scss';
 
 function Header() {

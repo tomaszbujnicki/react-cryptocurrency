@@ -1,0 +1,36 @@
+.coin-preview {
+  display: grid;
+  position: relative;
+  grid-template-columns: 50px 200px 150px 100px 100px 200px 200px;
+  padding: 24px;
+  text-align: center;
+  border-bottom: 1px solid #ddd;
+}
+
+.coin-preview__name {
+  font-size: 16px;
+  text-align: left;
+}
+
+.coin-preview__img {
+  height: 30px;
+  width: 30px;
+  margin-right: 10px;
+}
+
+.coin-preview__symbol {
+  text-transform: uppercase;
+  text-align: center;
+}
+
+.coin-preview__price {
+  font-weight: 700;
+}
+
+.red {
+  color: var(--red);
+}
+
+.green {
+  color: var(--green);
+}

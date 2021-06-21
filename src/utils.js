@@ -1,4 +1,4 @@
-import coinList from '../data/coinList';
+import coinList from './data/coinList';
 
 export function createCoinLinkname(coinName) {
   const reg0 = /τ/g;

@@ -1,0 +1,29 @@
+.coins {
+
+}
+
+.coins__header {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.coins__title {
+  font-size: 32px;
+}
+.coins__image {
+  width: 48px;
+  height: 48px;
+  margin-right: 16px;
+}
+
+.coins__article {
+  padding: 12px;
+  max-width: 1000px;
+  line-height: 1.6;
+}
+
+.coins__heading {
+  font-size: 24px;
+  margin-bottom: 12px;
+}

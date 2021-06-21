@@ -6,6 +6,7 @@ const PATHS = {
   coinList:
     'markets?vs_currency=usd&order=market_cap_desc&per_page=100&sparkline=false&page=',
   coinDetails: '',
+  coinTickers: 'bitcoin/tickers',
 };
 
 const GET = {

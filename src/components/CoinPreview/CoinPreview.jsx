@@ -24,7 +24,7 @@ function CoinPreview(props) {
 
   return (
     <div className="coin-preview">
-      <img className="coin-preview__img" src={image} alt="crypto" />
+      <img className="coin-preview__img" src={image} alt="" />
       <h3 className="coin-preview__name">{name}</h3>
       <p className="coin-preview__symbol">{symbol}</p>
       <p className="coin-preview__price">{price}</p>

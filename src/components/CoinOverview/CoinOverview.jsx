@@ -26,7 +26,6 @@ const CoinOverview = (props) => {
     <div className="CoinOverview">
       <section className="CoinOverview__head">
         <CoinHeading image={image} name={coin.name} symbol={coin.symbol} />
-        <CoinHeading image={image} name="Bolek" symbol={coin.symbol} />
       </section>
       <section className="CoinOverview__description">
         {coin.description && (

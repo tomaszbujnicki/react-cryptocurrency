@@ -1,16 +1,13 @@
 import React from 'react';
 import './DataList.scss';
 
-function DataList(props) {
-  const items = props.items;
-  const createElement = props.createElement;
-
+function DataList({ items, createElement }) {
   return (
     <ol className="DataList">
-      {items.map((coin) => {
+      {items.map((item) => {
         return (
-          <li className="DataList__li" key={coin.id}>
-            {createElement(coin)}
+          <li className="DataList__li" key={item.id}>
+            {createElement(item)}
           </li>
         );
       })}

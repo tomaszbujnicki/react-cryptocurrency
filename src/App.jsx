@@ -5,11 +5,10 @@ import {
   Route,
   Redirect,
 } from 'react-router-dom';
-import './App.scss';
-import Header from '../Header';
-import CoinOverview from '../CoinOverview';
-import CoinList from '../CoinList';
-import { getCoinId } from '../../utils';
+import Header from './components/Header';
+import CoinPage from './pages/CoinPage';
+import HomePage from './pages/HomePage';
+import { getCoinId } from './utils';
 
 export default function App() {
   return (
@@ -18,7 +17,7 @@ export default function App() {
       <div className="container">
         <Switch>
           <Route exact path="/">
-            <CoinList />
+            <HomePage />
           </Route>
 
           <Route path="/about"></Route>
@@ -28,7 +27,7 @@ export default function App() {
             path="/coins/:coinLinkName"
             render={({ match }) => {
               const id = getCoinId(match.params.coinLinkName);
-              return id ? <CoinOverview id={id} /> : <Redirect to="/" />;
+              return id ? <CoinPage id={id} /> : <Redirect to="/" />;
             }}
           />
 

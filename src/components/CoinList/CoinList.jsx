@@ -6,27 +6,27 @@ import CoinListHeader from './CoinListHeader';
 import CoinPreview from '../CoinPreview';
 import DataList from '../DataList';
 
-function CoinList(props) {
+function CoinList({ page }) {
   const [coins, setCoins] = useState([]);
 
   useEffect(() => {
-    GET.coinList(props.page)
+    GET.coinList(page)
       .then((res) => setCoins(res.data))
       .catch((err) => console.log(err));
-  }, [props.page]);
+  }, [page]);
 
   if (coins.length === 0) {
     return <Loading />;
   }
 
   return (
-    <div className="CoinList">
+    <section>
       <CoinListHeader />
       <DataList
         items={coins}
         createElement={(data) => <CoinPreview coin={data} />}
       />
-    </div>
+    </section>
   );
 }
 

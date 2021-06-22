@@ -1,0 +1,12 @@
+.CoinOverview {
+  font-family: inherit;
+}
+
+.CoinOverview__head{
+  display: grid;
+  grid-template-columns: 50% 50%;
+}
+
+.CoinOverview__description{
+  background: var(--surface);
+}

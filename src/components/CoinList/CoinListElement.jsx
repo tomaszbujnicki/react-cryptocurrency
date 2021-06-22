@@ -1,9 +1,9 @@
 import React from 'react';
 import assets from '../../data/assets';
 
-import './CoinPreview.scss';
+import './CoinListElement.scss';
 
-function CoinPreview(props) {
+function CoinListElement(props) {
   const coin = props.coin;
 
   const image = coin.image || assets.defaultImage;
@@ -23,16 +23,19 @@ function CoinPreview(props) {
     : '';
 
   return (
-    <div className="coin-preview">
-      <img className="coin-preview__img" src={image} alt="" />
-      <h3 className="coin-preview__name">{name}</h3>
-      <p className="coin-preview__symbol">{symbol}</p>
-      <p className="coin-preview__price">{price}</p>
-      <p className={change24 < 0 ? 'red' : 'green'}>{change24}</p>
-      <p className="coin-volume">{volume24}</p>
-      <p className="coin-marketcap">{marketCapitalization}</p>
+    <div className="CoinListElement">
+      <img className="CoinListElement__img" src={image} alt="" />
+      <h3 className="CoinListElement__name">{name}</h3>
+      <p className="CoinListElement__symbol">{symbol}</p>
+      <span className="empty-positioner"></span>
+      <p className="CoinListElement__price">{price}</p>
+      <p className={coin.price_change_percentage_24h < 0 ? 'red' : 'green'}>
+        {change24}
+      </p>
+      <p>{volume24}</p>
+      <p>{marketCapitalization}</p>
     </div>
   );
 }
 
-export default CoinPreview;
+export default CoinListElement;

@@ -14,8 +14,8 @@ function Header() {
   );
 
   return (
-    <header>
-      <h1>React Cryptocurrency API</h1>
+    <header className="header">
+      <span className="header__title">React Cryptocurrency API</span>
       <div className="coin-search">
         <h2 className="coin-text">Search a currency</h2>
         <form>

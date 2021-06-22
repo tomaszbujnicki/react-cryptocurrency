@@ -1,0 +1,22 @@
+.CoinOverviewHeader {
+  display: flex;
+  align-items: center;
+  background-color: var(--background);
+  padding: 24px 48px;
+}
+
+.CoinOverviewHeader__title {
+  font-size: 32px;
+  color: var(--on-background);
+  margin: 0 16px;
+}
+
+.CoinOverviewHeader__image {
+  width: 48px;
+  height: 48px;
+}
+
+.CoinOverviewHeader__symbol {
+  font-size: 24px;
+  text-transform: uppercase;
+}

@@ -1,0 +1,22 @@
+.CoinHeading {
+  display: flex;
+  align-items: center;
+  background-color: var(--background);
+  padding: 24px;
+}
+
+.CoinHeading__title {
+  font-size: 32px;
+  color: var(--on-background);
+  margin: 0 16px;
+}
+
+.CoinHeading__image {
+  width: 48px;
+  height: 48px;
+}
+
+.CoinHeading__symbol {
+  font-size: 24px;
+  text-transform: uppercase;
+}

@@ -1,0 +1,9 @@
+.CoinListHeader{
+  display: grid;
+  position: relative;
+  padding: 24px;
+  text-align: center;
+  grid-template-columns: 250px 150px 1fr 100px 100px 200px 200px;
+  background: var(--lighter-surface);
+  width: 100%;
+}

@@ -5,12 +5,16 @@ import GET from '../../api';
 import Loading from '../Loading';
 import CoinHeading from '../CoinHeading';
 import Article from '../Article';
+import CoinChart from '../CoinChart';
 
-const CoinOverview = (props) => {
-  let id = props.id;
-
+const CoinOverview = ({ id }) => {
   const [coin, setCoin] = useState([]);
   const image = coin.image ? coin.image.small : '';
+  const description = coin.description
+    ? coin.description.en
+      ? removeTags(coin.description.en)
+      : null
+    : null;
 
   useEffect(() => {
     GET.coinDetails(id)
@@ -27,12 +31,12 @@ const CoinOverview = (props) => {
       <section className="CoinOverview__head">
         <CoinHeading image={image} name={coin.name} symbol={coin.symbol} />
       </section>
+      <section className="CoinOverview__chart">
+        <CoinChart id={id} />
+      </section>
       <section className="CoinOverview__description">
-        {coin.description && (
-          <Article
-            title={`What is ${coin.name}`}
-            content={removeTags(coin.description.en)}
-          />
+        {description && (
+          <Article title={`What is ${coin.name}?`} content={description} />
         )}
       </section>
     </div>

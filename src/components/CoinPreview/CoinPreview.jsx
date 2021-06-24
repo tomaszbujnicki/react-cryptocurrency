@@ -11,17 +11,15 @@ function CoinPreview(props) {
   const image = coin.image || assets.defaultImage;
   const name = coin.name || '';
   const symbol = coin.symbol || '';
-  const price = coin.current_price
-    ? '$' + coin.current_price.toLocaleString()
-    : '';
+  const price = coin.current_price ? formatCurrency(coin.current_price) : '';
   const change24 = coin.price_change_percentage_24h
     ? coin.price_change_percentage_24h.toFixed(2) + '%'
     : '';
   const volume24 = coin.total_volume
-    ? '$' + coin.total_volume.toLocaleString()
+    ? formatCurrency(coin.total_volume, 0)
     : '';
   const marketCapitalization = coin.market_cap
-    ? '$' + coin.market_cap.toLocaleString()
+    ? formatCurrency(coin.market_cap, 0)
     : '';
 
   return (
@@ -43,3 +41,11 @@ function CoinPreview(props) {
 }
 
 export default CoinPreview;
+
+function formatCurrency(amount, maxDigits = 8) {
+  return amount.toLocaleString('en-US', {
+    style: 'currency',
+    currency: 'USD',
+    maximumFractionDigits: maxDigits,
+  });
+}

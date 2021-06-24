@@ -3,7 +3,7 @@ import './HomePage.scss';
 import CoinList from '../../components/CoinList';
 
 function HomePage() {
-  return <CoinList page={2} />;
+  return <CoinList page={1} />;
 }
 
 export default HomePage;

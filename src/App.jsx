@@ -8,7 +8,6 @@ import {
 import Header from './components/Header';
 import CoinPage from './pages/CoinPage';
 import HomePage from './pages/HomePage';
-import { getCoinId } from './utils';
 
 export default function App() {
   return (
@@ -16,20 +15,9 @@ export default function App() {
       <Header />
       <div className="container">
         <Switch>
-          <Route exact path="/">
-            <HomePage />
-          </Route>
+          <Route exact path="/" component={HomePage} />
 
-          <Route path="/about"></Route>
-
-          <Route
-            exact
-            path="/coins/:coinLinkName"
-            render={({ match }) => {
-              const id = getCoinId(match.params.coinLinkName);
-              return id ? <CoinPage id={id} /> : <Redirect to="/" />;
-            }}
-          />
+          <Route exact path="/coins/:coinLinkName" component={CoinPage} />
 
           <Redirect from="/" to="/" />
         </Switch>

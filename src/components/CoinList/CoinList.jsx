@@ -3,7 +3,7 @@ import GET from '../../api';
 
 import Loading from '../Loading';
 import CoinListHeader from './CoinListHeader';
-import CoinPreview from '../CoinPreview';
+import CoinPreview from './CoinPreview';
 import DataList from '../DataList';
 
 function CoinList({ page }) {

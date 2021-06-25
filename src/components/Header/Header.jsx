@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import coinList from '../../data/coinList';
 import Logo from '../Logo';
+import UserSettings from '../UserSettings/UserSettings';
 import './Header.scss';
 
 function Header() {
@@ -41,7 +42,9 @@ function Header() {
                 </form>
               </div>{' '}
             </div>
-            <div className="Heder__row"></div>
+            <div className="Heder__row">
+              <UserSettings />
+            </div>
           </div>
         </div>
       </div>

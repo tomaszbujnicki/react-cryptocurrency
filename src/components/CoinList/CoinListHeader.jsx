@@ -1,4 +1,5 @@
 import React from 'react';
+import { getCurrencySymbol } from '../../utils/format';
 import './CoinListHeader.scss';
 
 function CoinListHeader() {
@@ -8,11 +9,11 @@ function CoinListHeader() {
       <p className="CoinListHeader__left">Coin</p>
       <p className="CoinListHeader__center">Symbol</p>
       <span className="empty-positioner"></span>
-      <p>Price</p>
-      <p>24h</p>
+      <p>Price [{getCurrencySymbol()}]</p>
+      <p>&uarr;&darr;24h</p>
       <span className="empty-positioner"></span>
-      <p>24h Volume</p>
-      <p>Market Cap</p>
+      <p>24h Volume [{getCurrencySymbol()}]</p>
+      <p>Market Cap [{getCurrencySymbol()}]</p>
     </div>
   );
 }

@@ -1,0 +1,20 @@
+.CustomTooltip {
+  background: var(--surface);
+  border: 1px solid var(--highlighted-surface);
+  color: var(--on-surface);
+  padding: 10px;
+  border-radius: 4px;
+
+  span {
+    font-family: 'Courier New', Courier, monospace;
+    color: var(--red);
+  }
+  
+
+  &__price {
+    margin: 5px 0;
+    span {
+      color: var(--green);
+    }
+  }
+}

@@ -4,7 +4,7 @@ import { getCoinLinkname } from '../../../utils';
 import { Link } from 'react-router-dom';
 
 import './CoinPreview.scss';
-import { formatNumber } from '../../../utils/formatNumber';
+import { formatNumber } from '../../../utils/format';
 
 function CoinPreview(props) {
   const coin = props.coin;

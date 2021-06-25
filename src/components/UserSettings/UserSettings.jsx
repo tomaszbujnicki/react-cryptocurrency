@@ -8,8 +8,6 @@ const UserSettings = () => {
     }
   });
 
-  console.log(settings);
-
   return (
     <div className="UserSettings">
       <ul>

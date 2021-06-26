@@ -1,0 +1,13 @@
+.CoinStats {
+
+
+  th {
+    font-weight: normal;
+    text-align: left;
+    padding: 4px 0;
+  }
+  th:nth-child(2){
+    text-align: right;
+    padding-left: 30px;
+  }
+}

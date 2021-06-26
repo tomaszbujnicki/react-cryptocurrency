@@ -8,7 +8,11 @@ import {
   Tooltip,
 } from 'recharts';
 import GET from '../../api';
-import { formatDate, formatNumber } from '../../utils/format';
+import {
+  formatDate,
+  formatNumber,
+  formatCompactNumber,
+} from '../../utils/format';
 import './CoinChart.scss';
 import { CustomTooltip } from './CustomTooltip';
 
@@ -71,7 +75,7 @@ const CoinChart = ({ id }) => {
           padding={{ bottom: 20 }}
           yAxisId="right"
           orientation="right"
-          tickFormatter={(value) => formatNumber(value, 0, 0)}
+          tickFormatter={(value) => formatCompactNumber(value)}
         />
         <Tooltip content={<CustomTooltip />} />
       </LineChart>

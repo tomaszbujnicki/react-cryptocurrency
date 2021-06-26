@@ -1,19 +1,25 @@
 import settings from '../data/settings';
 
 export function formatNumber(amount, minDigits = 0, maxDigits = 8) {
-  return amount.toLocaleString(settings.language, {
+  return new Intl.NumberFormat(settings.language, {
     minimumFractionDigits: minDigits,
     maximumFractionDigits: maxDigits,
-  });
+  }).format(amount);
 }
 
 export function formatCurrency(amount, minDigits = 0, maxDigits = 8) {
-  return amount.toLocaleString(settings.language, {
+  return new Intl.NumberFormat(settings.language, {
     minimumFractionDigits: minDigits,
     maximumFractionDigits: maxDigits,
     currency: settings.currency,
     style: 'currency',
-  });
+  }).format(amount);
+}
+
+export function formatCompactNumber(amount) {
+  return new Intl.NumberFormat(settings.language, {
+    notation: 'compact',
+  }).format(amount);
 }
 
 export const getCurrencySymbol = () =>

@@ -6,6 +6,7 @@ import Loading from '../Loading';
 import CoinHeading from '../CoinHeading';
 import Article from '../Article';
 import CoinChart from '../CoinChart';
+import { CoinStats } from './CoinStats';
 
 const CoinOverview = ({ id }) => {
   const [coin, setCoin] = useState([]);
@@ -25,6 +26,7 @@ const CoinOverview = ({ id }) => {
   if (coin.length === 0) {
     return <Loading />;
   }
+  console.log(coin);
 
   return (
     <div className="CoinOverview">
@@ -33,6 +35,7 @@ const CoinOverview = ({ id }) => {
       </section>
       <section className="CoinOverview__chart">
         <CoinChart id={id} />
+        <CoinStats coin={coin} />
       </section>
       <section className="CoinOverview__description">
         {description && (

@@ -8,12 +8,16 @@
   color: var(--on-background);
   letter-spacing: 2px;
   font-size: 15px;
-  transition: 1s;
-  outline: 1px solid transparent;
+  transition: background-color 1s, border 1s;
 }
 
-.Button:hover, Button:focus {
+.Button:hover {
   background: var(--primary);
   border: 1px solid var(--primary);
-  transition: 1s; 
+  transition: 1s;
+}
+.Button:focus-visible {
+  position: relative;
+  outline: 3px solid var(--green);
+  outline-offset: -1px;
 }

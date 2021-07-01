@@ -14,32 +14,38 @@ import {
 } from '../../utils/format';
 import { CustomTooltip } from './CustomTooltip';
 
-const Chart = ({ data, dataToShow }) => {
+const Chart = ({ data, isHide }) => {
   return (
     <LineChart width={1000} height={400} data={data}>
       <Line
         type="monotone"
-        dataKey={dataToShow.price ? 'price' : null}
+        hide={isHide.price}
+        dataKey="price"
         stroke="var(--green)"
         dot={{ r: 0 }}
         activeDot={{ r: 5 }}
         yAxisId="left"
+        key={'a'}
       />
       <Line
         type="monotone"
-        dataKey={dataToShow.volume ? 'volume' : null}
+        hide={isHide.volume}
+        dataKey="volume"
         stroke="var(--yellow)"
         dot={{ r: 0 }}
         activeDot={{ r: 5 }}
         yAxisId="right"
+        key={'b'}
       />
       <Line
         type="monotone"
-        dataKey={dataToShow.marketCap ? 'marketCap' : null}
+        hide={isHide.marketCap}
+        dataKey="marketCap"
         stroke="var(--red)"
         dot={{ r: 0 }}
         activeDot={{ r: 5 }}
         yAxisId="far-right"
+        key={isHide.marketCap ? Math.random() : 'c'}
       />
       <CartesianGrid stroke="rgba(255,255,255,0.3)" strokeDasharray="1 3" />
       <XAxis interval={24} dataKey="date" tickFormatter={formatDate.short} />

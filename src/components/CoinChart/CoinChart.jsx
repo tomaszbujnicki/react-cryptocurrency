@@ -7,10 +7,10 @@ import Button from '../Button';
 
 const CoinChart = ({ id }) => {
   const [data, setData] = useState([]);
-  const [dataToShow, setDataToShow] = useState({
-    price: true,
-    volume: true,
-    marketCap: false,
+  const [isHide, setIsHide] = useState({
+    price: false,
+    volume: false,
+    marketCap: true,
   });
   useEffect(() => {
     GET.coinChart(id)
@@ -32,8 +32,8 @@ const CoinChart = ({ id }) => {
   };
 
   const toggle = (item) => {
-    dataToShow[item] = !dataToShow[item];
-    setDataToShow({ ...dataToShow });
+    isHide[item] = !isHide[item];
+    setIsHide({ ...isHide });
   };
 
   if (data.length === 0) return <div className="CoinChart"></div>;
@@ -53,7 +53,7 @@ const CoinChart = ({ id }) => {
           <Button>1y</Button>
         </ButtonSet>
       </div>
-      <Chart data={data} dataToShow={dataToShow} />
+      <Chart data={data} isHide={isHide} />
     </div>
   );
 };

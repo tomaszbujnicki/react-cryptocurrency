@@ -2,13 +2,15 @@
   box-sizing: border-box;
   margin: 0;
   padding: 0;
+  font-weight: normal;
 }
 
 body {
   background-color: var(--background);
   color: var(--on-background);
-  font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-  font-weight: normal;
+  font-family: 'Roboto', sans-serif;
+  font-weight: 400;
+  font-size: 16px;
   overflow-y: scroll;
 }
 

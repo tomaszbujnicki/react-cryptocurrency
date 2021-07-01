@@ -7,7 +7,7 @@
 
   span {
     font-family: 'Courier New', Courier, monospace;
-    color: var(--red);
+    color: var(--yellow);
   }
   
 
@@ -15,6 +15,13 @@
     margin: 5px 0;
     span {
       color: var(--green);
+    }
+  }
+
+  &__marketCap {
+    margin: 5px 0;
+    span {
+      color: var(--red);;
     }
   }
 }

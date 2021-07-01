@@ -24,6 +24,7 @@ function CoinList({ page }) {
       <CoinListHeader />
       <DataList
         items={coins}
+        keys={'id'}
         createElement={(data) => <CoinPreview coin={data} />}
       />
     </section>

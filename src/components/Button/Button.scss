@@ -1,0 +1,19 @@
+.Button {
+  padding: 3px 9px;
+  background: var(--on-surface);
+  border-radius: 2px;
+  border-radius: 4px;
+  border: 1px solid var(--on-background);
+  background: var(--surface);
+  color: var(--on-background);
+  letter-spacing: 2px;
+  font-size: 15px;
+  transition: 1s;
+  outline: 1px solid transparent;
+}
+
+.Button:hover, Button:focus {
+  background: var(--primary);
+  border: 1px solid var(--primary);
+  transition: 1s; 
+}

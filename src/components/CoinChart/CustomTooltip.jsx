@@ -7,6 +7,7 @@ export const CustomTooltip = ({ active, payload }) => {
     const date = payload[0].payload.date;
     const price = payload[0].payload.price;
     const volume = payload[0].payload.volume;
+    const marketCap = payload[0].payload.marketCap;
     return (
       <div className="CustomTooltip">
         <p>{formatDate.long(date)}</p>
@@ -15,6 +16,9 @@ export const CustomTooltip = ({ active, payload }) => {
         </p>
         <p className="CustomTooltip__volume">
           Volume: <span>{formatCurrency(volume, 0, 0)}</span>
+        </p>
+        <p className="CustomTooltip__marketCap">
+          Mark Cap: <span>{formatCurrency(marketCap, 0, 0)}</span>
         </p>
       </div>
     );

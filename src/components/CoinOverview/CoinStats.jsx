@@ -9,6 +9,7 @@ export const CoinStats = ({ coin }) => {
 
   return (
     <article className="CoinStats">
+      <h2 className="CoinStats__heading">Market Stats</h2>
       <table>
         <tbody>
           <tr>

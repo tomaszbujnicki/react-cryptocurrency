@@ -1,17 +1,58 @@
 import React, { useEffect, useState } from 'react';
 import GET from '../../api';
-import Chart from './Chart';
+import Chart from '../Chart';
 import './CoinChart.scss';
 import ButtonSet from './ButtonSet';
 import Button from '../Button';
+import {
+  formatCompactNumber,
+  formatCurrency,
+  formatDate,
+  formatNumber,
+} from '../../utils/format';
 
 const CoinChart = ({ id }) => {
   const [data, setData] = useState([]);
-  const [isHide, setIsHide] = useState({
-    price: false,
-    volume: false,
-    marketCap: true,
-  });
+
+  const dataKey = {
+    id: 'date',
+    tickFormatter: formatDate.short,
+    tooltipFormatter: formatDate.long,
+  };
+
+  const [labels, setLabels] = useState([
+    {
+      id: 'price',
+      name: 'Price',
+      isHide: false,
+      color: 'var(--green)',
+      orientation: 'left',
+      width: 100,
+      tickFormatter: (value) => formatNumber(value, 0, 8),
+      tooltipFormatter: formatCurrency,
+    },
+    {
+      id: 'volume',
+      name: 'Volume',
+      isHide: false,
+      color: 'var(--yellow)',
+      orientation: 'right',
+      width: 60,
+      tickFormatter: formatCompactNumber,
+      tooltipFormatter: (value) => formatCurrency(value, 0, 0),
+    },
+    {
+      id: 'marketCap',
+      name: 'Mark Cap',
+      isHide: true,
+      color: 'var(--red)',
+      orientation: 'right',
+      width: 60,
+      tickFormatter: formatCompactNumber,
+      tooltipFormatter: (value) => formatCurrency(value, 0, 0),
+    },
+  ]);
+
   useEffect(() => {
     GET.coinChart(id)
       .then((res) => formatData(res.data))
@@ -19,21 +60,22 @@ const CoinChart = ({ id }) => {
   }, [id]);
 
   const formatData = (rawData) => {
-    console.log(rawData);
     const data = [];
     for (let i = 0; i < rawData.prices.length; i++) {
-      const date = rawData.prices[i][0];
-      const price = rawData.prices[i][1];
-      const volume = rawData.total_volumes[i][1];
-      const marketCap = rawData.market_caps[i][1];
-      data.push({ date, price, volume, marketCap });
+      data.push({
+        date: rawData.prices[i][0],
+        price: rawData.prices[i][1],
+        volume: rawData.total_volumes[i][1],
+        marketCap: rawData.market_caps[i][1],
+      });
     }
     setData(data);
   };
 
   const toggle = (item) => {
-    isHide[item] = !isHide[item];
-    setIsHide({ ...isHide });
+    const found = labels.find((el) => el.id === item);
+    found.isHide = !found.isHide;
+    setLabels([...labels]);
   };
 
   if (data.length === 0) return <div className="CoinChart"></div>;
@@ -53,7 +95,7 @@ const CoinChart = ({ id }) => {
           <Button>1y</Button>
         </ButtonSet>
       </div>
-      <Chart data={data} isHide={isHide} />
+      <Chart data={data} dataKey={dataKey} labels={labels} />
     </div>
   );
 };

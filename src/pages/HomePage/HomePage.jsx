@@ -1,8 +1,8 @@
 import React, { useState, useEffect } from 'react';
 import Loading from '../../components/Loading';
-import './HomePage.scss';
 import CoinList from '../../components/CoinList';
 import GET from '../../api';
+import './HomePage.scss';
 
 function HomePage() {
   const [coins, setCoins] = useState([]);

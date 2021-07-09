@@ -1,15 +1,15 @@
 import React, { useEffect, useState } from 'react';
-import GET from '../../api';
 import Chart from '../Chart';
-import './CoinChart.scss';
-import ButtonSet from './ButtonSet';
+import ButtonSet from '../ButtonSet';
 import Button from '../Button';
+import GET from '../../api';
 import {
   formatCompactNumber,
   formatCurrency,
   formatDate,
   formatNumber,
 } from '../../utils/format';
+import './CoinChart.scss';
 
 const CoinChart = ({ id }) => {
   const [data, setData] = useState([]);

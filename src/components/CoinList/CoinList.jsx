@@ -1,32 +1,21 @@
-import React, { useState, useEffect } from 'react';
-import GET from '../../api';
-
-import Loading from '../Loading';
+import React from 'react';
 import CoinListHeader from './CoinListHeader';
 import CoinPreview from './CoinPreview';
-import DataList from '../DataList';
+import './CoinList.scss';
 
-function CoinList({ page }) {
-  const [coins, setCoins] = useState([]);
-
-  useEffect(() => {
-    GET.coinList(page)
-      .then((res) => setCoins(res.data))
-      .catch((err) => console.log(err));
-  }, [page]);
-
-  if (coins.length === 0) {
-    return <Loading />;
-  }
-
+function CoinList({ coins }) {
   return (
     <section>
       <CoinListHeader />
-      <DataList
-        items={coins}
-        keys={'id'}
-        createElement={(data) => <CoinPreview coin={data} />}
-      />
+      <ol className={'CoinList'}>
+        {coins.map((coin) => {
+          return (
+            <li key={coin.id}>
+              <CoinPreview coin={coin} />
+            </li>
+          );
+        })}
+      </ol>
     </section>
   );
 }

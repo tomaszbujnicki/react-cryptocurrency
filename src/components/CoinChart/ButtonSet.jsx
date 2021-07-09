@@ -1,14 +1,13 @@
 import React from 'react';
-import DataList from '../DataList';
 import './ButtonSet.scss';
 
 const ButtonSet = ({ children }) => {
   return (
-    <DataList
-      className="ButtonSet"
-      items={children}
-      createElement={(item) => item}
-    />
+    <ul className={'ButtonSet'}>
+      {children.map((item, index) => {
+        return <li key={index}>{item}</li>;
+      })}
+    </ul>
   );
 };
 

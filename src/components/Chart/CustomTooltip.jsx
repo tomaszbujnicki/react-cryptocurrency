@@ -8,7 +8,7 @@ const CustomTooltip = ({ active, payload, labels, dataKey }) => {
       <div className="CustomTooltip">
         <p>{dataKey.tooltipFormatter(heading)}</p>
         {labels.map((label) => (
-          <p>
+          <p key={label.name}>
             {label.name + ': '}
             <span style={{ color: label.color }}>
               {label.tooltipFormatter(payload[0].payload[label.id])}

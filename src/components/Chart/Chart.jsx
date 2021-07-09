@@ -9,7 +9,7 @@ import {
 } from 'recharts';
 import CustomTooltip from './CustomTooltip';
 
-const Chart = ({ data, dataKey, tickFormatter, labels }) => {
+const Chart = ({ data, dataKey, labels }) => {
   return (
     <LineChart width={1000} height={400} data={data}>
       <CartesianGrid stroke="rgba(255,255,255,0.3)" strokeDasharray="1 3" />
@@ -20,7 +20,7 @@ const Chart = ({ data, dataKey, tickFormatter, labels }) => {
         tickFormatter={dataKey.tickFormatter}
       />
 
-      {labels.map((label) => (
+      {labels.map((label, index) => (
         <YAxis
           yAxisId={label.id}
           width={label.width}
@@ -31,6 +31,7 @@ const Chart = ({ data, dataKey, tickFormatter, labels }) => {
           domain={['auto', 'auto']}
           padding={{ bottom: 20 }}
           tickFormatter={label.tickFormatter}
+          key={index}
         />
       ))}
       {labels.map((label) => (

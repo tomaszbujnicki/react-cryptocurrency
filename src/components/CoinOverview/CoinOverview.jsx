@@ -1,6 +1,6 @@
 import React from 'react';
 import './CoinOverview.scss';
-import { removeTags } from '../../utils';
+import { removeTags } from '../../utils/removeTags';
 import CoinHeading from '../CoinHeading';
 import Article from '../Article';
 import CoinChart from '../CoinChart';

@@ -1,20 +1,9 @@
-import React, { useState } from 'react';
-import coinList from '../../data/coinList';
+import React from 'react';
 import Logo from '../Logo';
 import UserSettings from '../UserSettings/UserSettings';
 import './Header.scss';
 
 function Header() {
-  const [search, setSearch] = useState('');
-
-  const handleChange = (e) => {
-    setSearch(e.target.value);
-  };
-
-  const filteredCoins = coinList.filter((coin) =>
-    coin.name.toLowerCase().includes(search.toLowerCase())
-  );
-
   return (
     <header className="Header">
       <div className="container">
@@ -37,7 +26,6 @@ function Header() {
                     type="text"
                     placeholder="Search"
                     className="coin-input"
-                    onChange={handleChange}
                   />
                 </form>
               </div>{' '}

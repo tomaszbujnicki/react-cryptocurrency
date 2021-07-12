@@ -1,6 +1,5 @@
 import React from 'react';
 import assets from '../../../data/assets';
-import { getCoinLinkname } from '../../../utils';
 import { Link } from 'react-router-dom';
 
 import './CoinPreview.scss';
@@ -24,7 +23,7 @@ function CoinPreview(props) {
     : '';
 
   return (
-    <Link className="" to={'/coins/' + getCoinLinkname(coin.id)}>
+    <Link className="" to={'/coins/' + coin.id}>
       <div className="CoinPreview">
         <img className="CoinPreview__img" src={image} alt="" />
         <h3 className="CoinPreview__name">{name}</h3>

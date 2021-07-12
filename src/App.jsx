@@ -17,7 +17,7 @@ export default function App() {
         <Switch>
           <Route exact path="/" component={HomePage} />
 
-          <Route exact path="/coins/:coinLinkName" component={CoinPage} />
+          <Route exact path="/coins/:id" component={CoinPage} />
 
           <Redirect from="/" to="/" />
         </Switch>

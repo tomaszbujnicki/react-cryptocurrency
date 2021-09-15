@@ -30,9 +30,7 @@ function Header() {
                 </form> */}
               </div>{' '}
             </div>
-            <div className="Heder__row">
-              <UserSettings />
-            </div>
+            <div className="Heder__row">{/* <UserSettings /> */}</div>
           </div>
         </div>
       </div>

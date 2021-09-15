@@ -11,7 +11,7 @@ function Header() {
           <Logo height="100px" />
           <div className="Heder__content">
             <div className="Heder__row">
-              <nav className="nav">
+              {/*               <nav className="nav">
                 <ul style={{ display: 'flex', listStyle: 'none' }}>
                   <li>Home</li>
                   <li>Veteran Lion</li>
@@ -19,15 +19,15 @@ function Header() {
                   <li>About Us</li>
                   <li>Github</li>
                 </ul>
-              </nav>
+              </nav> */}
               <div className="coin-search">
-                <form>
+                {/*                 <form>
                   <input
                     type="text"
                     placeholder="Search"
                     className="coin-input"
                   />
-                </form>
+                </form> */}
               </div>{' '}
             </div>
             <div className="Heder__row">

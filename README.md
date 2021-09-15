@@ -1,3 +1,3 @@
 # React Cryptocurrency
 
-<https://tomaszbujnicki.github.io/>
+<https://tomaszbujnicki.github.io/react-cryptocurrency/>
